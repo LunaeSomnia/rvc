@@ -1,0 +1,10 @@
+[package]
+name = "rcv"
+version = "0.1.0"
+authors = ["LunaeSomnia (lunaesomnia@protonmail.com)"]
+description = "Rust Version Control"
+respository = "https://github.com/LunaeSomnia/rvc"
+license = "MIT"
+
+[dependencies]
+clap = "3.2.8"
