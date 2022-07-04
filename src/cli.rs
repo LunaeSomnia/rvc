@@ -1,5 +1,6 @@
 use clap::Parser;
 
+/// An enumerator containing all the possible commands this program can execute with it's parameters
 #[derive(Parser, Debug)]
 pub enum Command {
     Create {
@@ -25,11 +26,10 @@ pub enum Command {
     Revise,
 }
 
-/// Simple program to greet a person
+/// Argument structure
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
 pub struct Args {
-    /// Name of the person to greet
     #[clap(subcommand)]
     pub command: Command,
 }
