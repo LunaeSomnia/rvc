@@ -4,9 +4,9 @@ use clap::Parser;
 pub enum Command {
     Create {
         #[clap(value_parser)]
-        path: Option<String>,
-        #[clap(value_parser)]
         name: String,
+        #[clap(value_parser)]
+        path: Option<String>,
     },
     Delete {
         #[clap(value_parser)]
