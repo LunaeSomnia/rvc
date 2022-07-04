@@ -1,0 +1,4 @@
+warning: unused manifest key: package.respository
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/rcv state`
+Rcv { dirs: Dirs { working_directory: "/home/lunaesomnia/Documents/GitHub/rvc", rcv: "/home/lunaesomnia/.rcv" }, changed_state: false, repositories: [Repository { name: "repo", path: "/home/lunaesomnia/Documents/GitHub/rvc" }, Repository { name: "testrepo", path: "/home/lunaesomnia/Documents/GitHub/rvc/testrepo" }] }

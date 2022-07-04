@@ -12,6 +12,7 @@ pub enum Command {
         #[clap(value_parser)]
         name: String,
     },
+    State,
     Checkout {
         #[clap(value_parser)]
         branch: String,

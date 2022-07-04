@@ -6,8 +6,9 @@ use std::{
 };
 
 use directories::UserDirs;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Default)]
 pub struct Dirs {
     pub working_directory: PathBuf,
     pub rcv: PathBuf,
