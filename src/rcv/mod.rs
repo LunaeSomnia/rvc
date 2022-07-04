@@ -60,7 +60,7 @@ impl Rcv {
             .repositories
             .clone()
             .into_iter()
-            .find(|x| x.path.to_str().unwrap() == path.to_str().unwrap())
+            .find(|x| x.path == path)
             .is_some()
         {
             self.changed_state = true;
@@ -96,9 +96,9 @@ impl Rcv {
             );
         } else {
             println!(
-                "{} There wasn't a repository with name '{}'",
+                "{} There wasn't a repository with name {}",
                 format!("{}", "error:".bold().bright_red()),
-                format!("{}", name.italic())
+                format!("{}", name.bright_red())
             );
         }
     }
