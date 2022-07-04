@@ -14,6 +14,7 @@ pub mod repository;
 
 #[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Rcv {
+    #[serde(skip)]
     pub changed_state: bool,
     pub repositories: Vec<Repository>,
 }
@@ -59,6 +60,23 @@ impl Rcv {
             self.repositories.push(Repository::new(name, path))
         } else {
             println!("RCV: There was a repository already created in this directory")
+        }
+    }
+
+    pub fn delete_repository(&mut self, name: &str) {
+        println!("COMMAND: Delete a repository with name '{name}'");
+
+        if let Some(i) = self
+            .repositories
+            .clone()
+            .into_iter()
+            .position(|r| r.name == name)
+        {
+            self.changed_state = true;
+            println!("Delete at pos {i}");
+            self.repositories.remove(i);
+        } else {
+            println!("RCV: There wasn't a repository with name '{name}'")
         }
     }
 

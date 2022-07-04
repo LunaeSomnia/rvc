@@ -19,7 +19,7 @@ fn main() -> Result<(), String> {
             rcv_status.create_repository(name, &dirs);
         }
         Command::Delete { name } => {
-            println!("COMMAND: Deletes a repository with name '{}'", name)
+            rcv_status.delete_repository(name);
         }
         Command::Checkout { branch } => {
             println!(
@@ -34,7 +34,9 @@ fn main() -> Result<(), String> {
         Command::Unlock => {}
     }
 
-    rcv_status.save(&dirs);
+    if rcv_status.changed_state {
+        rcv_status.save(&dirs);
+    }
 
     Ok(())
 }
