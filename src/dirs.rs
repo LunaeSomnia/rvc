@@ -1,6 +1,5 @@
 use std::{
     env::current_dir,
-    fmt::Display,
     fs::File,
     path::{Path, PathBuf},
 };
@@ -35,16 +34,5 @@ impl Dirs {
         } else {
             None
         }
-    }
-}
-
-impl Display for Dirs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        f.write_str(&format!(
-            "Working directory: {}\nRcv file path: {} [{}]",
-            self.working_directory.to_str().unwrap(),
-            self.rcv.to_str().unwrap(),
-            self.rcv.exists()
-        ))
     }
 }
