@@ -69,7 +69,7 @@ impl Rcv {
 
             println!(
                 "The repository {} was created successfully\n-> {}",
-                format!("{}", "name".bright_green()),
+                format!("{}", name.bright_green()),
                 format!("{}", path.to_str().unwrap().bright_black())
             );
         } else {
@@ -92,7 +92,7 @@ impl Rcv {
 
             println!(
                 "The repository {} was deleted successfully",
-                format!("{}", "name".bright_red()),
+                format!("{}", name.bright_red()),
             );
         } else {
             println!(
@@ -109,7 +109,12 @@ impl Rcv {
         rcv_file.write_all(serialized_state.as_bytes()).unwrap();
     }
 
-    pub fn current_repository(&self) {}
+    pub fn current_repository(&self) -> Option<Repository> {
+        self.repositories
+            .clone()
+            .into_iter()
+            .find(|x| x.path == self.dirs.working_directory)
+    }
 }
 
 impl Display for Rcv {
@@ -123,11 +128,18 @@ impl Display for Rcv {
             option_env!("CARGO_PKG_VERSION").unwrap()
         ));
 
+        if let Some(current) = self.current_repository() {
+            x.push_str(&format!(
+                "\nCurrent: {}\n",
+                format!("{}", current.name).bright_green()
+            ));
+        }
+
         // Git repositories
         if self.repositories.len() != 0 {
             x.push_str(&format!(
                 "\n{}: ({})",
-                "Repositories".bright_yellow(),
+                "All Repositories".bright_yellow(),
                 self.repositories.len()
             ));
             x.push_str("\n");
