@@ -16,6 +16,7 @@ If you feel like I could have improved something in this project, please let me 
 - [x] Save state locally (under user's default home directory as `.rvc` using the `ron` crate)
 - [x] Save which repositories are being tracked with commands `create` and `delete`
 - [x] Review state with the `state` command
+- [ ] Comment and document everything
 - [ ] Identify file changes under a given repository from a previous state in time
 - [ ] Save states under commits
 - [ ] Add the *number of revisions* functionality
