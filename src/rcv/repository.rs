@@ -12,7 +12,7 @@ impl Repository {
     pub fn new(name: &str, path: &str) -> Self {
         Repository {
             name: name.to_string(),
-            path: Path::new(&path).to_path_buf(),
+            path: Path::new(&path).canonicalize().unwrap(),
         }
     }
 }

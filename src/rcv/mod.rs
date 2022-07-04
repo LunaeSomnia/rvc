@@ -43,10 +43,16 @@ impl Rcv {
         }
     }
 
-    pub fn create_repository(&mut self, name: &str, dirs: &Dirs) {
+    pub fn create_repository(&mut self, path: &Option<String>, name: &str, dirs: &Dirs) {
         println!("COMMAND: Create a new repository with name '{}'", name);
 
-        let path = dirs.working_directory.to_str().unwrap();
+        let path = {
+            if let Some(p) = path {
+                p
+            } else {
+                dirs.working_directory.to_str().unwrap()
+            }
+        };
 
         // If there was no repositories with the same working directory as the one you're in... continue
         if !self

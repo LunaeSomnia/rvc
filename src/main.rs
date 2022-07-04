@@ -15,8 +15,8 @@ fn main() -> Result<(), String> {
 
     match &args.command {
         // Creates a new repository in the current working directory
-        Command::Create { name } => {
-            rcv_status.create_repository(name, &dirs);
+        Command::Create { path, name } => {
+            rcv_status.create_repository(path, name, &dirs);
         }
         Command::Delete { name } => {
             rcv_status.delete_repository(name);
