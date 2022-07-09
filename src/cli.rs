@@ -9,17 +9,17 @@ pub enum Command {
         #[clap(value_parser)]
         path: Option<String>,
     },
-    Delete {
-        #[clap(value_parser)]
-        name: String,
-    },
+    Delete,
     State,
     Checkout {
         #[clap(value_parser)]
         branch: String,
     },
-
-    Commit,
+    Diff,
+    Commit {
+        #[clap(value_parser)]
+        name: String,
+    },
     Push,
     Pull,
     Unlock,

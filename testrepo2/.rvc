@@ -1,0 +1,57 @@
+(
+    name: "testrepo",
+    path: "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2",
+    commits: [
+        (
+            timestamp: 1657387799,
+            filemods: [],
+            created: {
+                "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/folder/another/other.txt": "other text is inside\n",
+                "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/sampletext.txt": "sample text here!\nin other line\nand below other line! impressive...\n",
+                "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/folder/inside.txt": "wow, im really inside a txt!\n",
+            },
+            deleted: [],
+        ),
+        (
+            timestamp: 1657387805,
+            filemods: [
+                (
+                    fpath: "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/sampletext.txt",
+                    changes: [
+                        (
+                            line: 4,
+                            change: Added("e"),
+                        ),
+                    ],
+                ),
+            ],
+            created: {},
+            deleted: [],
+        ),
+        (
+            timestamp: 1657387807,
+            filemods: [
+                (
+                    fpath: "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/sampletext.txt",
+                    changes: [
+                        (
+                            line: 4,
+                            change: Deleted,
+                        ),
+                        (
+                            line: 5,
+                            change: Deleted,
+                        ),
+                    ],
+                ),
+            ],
+            created: {},
+            deleted: [],
+        ),
+    ],
+    checkout: {
+        "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/sampletext.txt": "sample text here!\nin other line\ne\n\n",
+        "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/folder/another/other.txt": "other text is inside\n",
+        "/home/lunaesomnia/Documents/GitHub/rvc/testrepo2/folder/inside.txt": "wow, im really inside a txt!\n",
+    },
+)
