@@ -1,5 +1,5 @@
 [package]
-name = "rcv"
+name = "rvc"
 version = "0.1.0"
 authors = ["LunaeSomnia (lunaesomnia@protonmail.com)"]
 description = "Rust Version Control"
